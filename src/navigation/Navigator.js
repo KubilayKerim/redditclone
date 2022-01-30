@@ -1,0 +1,25 @@
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import HomeScreen from '../screens/HomeScreen';
+import PostsScreen from '../screens/PostsScreen';
+
+const Stack = createNativeStackNavigator();
+
+const Navigator = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'r/pics Hot' }}
+        />
+        <Stack.Screen name="Posts" component={PostsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default Navigator;
